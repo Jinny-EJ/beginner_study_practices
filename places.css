@@ -52,6 +52,9 @@ main li img {
   flex-direction: column;
   justify-content: space-between;
 }
+.item-content h2 {
+    margin: 0;
+}
 
 .actions {
   text-align: right;
