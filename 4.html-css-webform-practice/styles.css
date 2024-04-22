@@ -1,55 +1,80 @@
 html {
-    font-family: "Roboto", sans-serif;
-    display: grid;
-    place-items: center;
-background-color: rgb(193, 215, 221);
-
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  place-items: center;
+  background-color: rgb(193, 215, 221);
+}
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 form {
-    background-color: rgb(243, 248, 248);
-    padding: 2rem;
-    width: 35rem;
-    box-shadow: 2px 2px 2px 2px rgba(113, 113, 113, 40%);
-
+  background-color: rgb(243, 248, 248);
+  padding: 2rem;
+  width: 35rem;
+  box-shadow: 2px 2px 2px 2px rgba(113, 113, 113, 40%);
+  border-radius: 6px;
 }
 
 ul {
-    margin:0;
-    padding:0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-li {
-    list-style: none;
-    width:;
+
+label {
+  display: block;
 }
 
 .box {
-    width: 100%;
-    height: 2rem;
-    margin: 0.3rem;
-    border: 0.1rem solid rgba(100, 100, 100, 20%);
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: 2rem;
+  margin: 0.3rem;
+  border: 0.1rem solid rgba(100, 100, 100, 20%);
+}
+
+select {
+  font-size: medium;
 }
 
 #user-message {
-    width: 100%;
-    margin: 0.3rem;
-    border: 0.1rem solid rgba(100, 100, 100, 20%);
+  width: 100%;
+  margin: 0.3rem;
+  border: 0.1rem solid rgba(100, 100, 100, 20%);
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 #accept-term {
-    margin: 0.8rem 0;
-
+  margin: 0.8rem 0;
 }
 
 button {
-    display: block;
-    
+  display: block-inline;
+  font: inherit;
+  border: 1px soid rgb(193, 215, 221);
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
 }
+
+#button-clear {
+  background-color: rgb(168, 226, 226);
+  color: rgb(40, 39, 39);
+}
+
+#button-submit {
+  background-color: rgb(54, 56, 56);
+  color: rgb(247, 243, 243);
+}
+
+#radio-verify {
+  display: flex;
+}
+
 

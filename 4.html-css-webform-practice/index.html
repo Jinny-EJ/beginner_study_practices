@@ -14,20 +14,20 @@
     <body>
         <h1>Contact Us</h1>
         <form action="/" method="GET">
-            <section>
+            <section id="section-personal">
                 <h2>How can we help you ?</h2>
                 <ul>
                     <li>
                         <label for="verify-user-name">Your name</label>
-                        <input type="text" name="verify-user-name"  class="box" />
+                        <input type="text" name="verify-user-name"  class="box" required/>
                     </li>
                     <li>
                         <label for="verify-user-email">Your E-Mail Address</label>
-                        <input type="email" name="verify-user-email"  class="box"/>
+                        <input type="email" name="verify-user-email"  class="box" required/>
                     </li>
                     <li>
                         <label for="verify-user-phone">Your Phone Number</label>
-                        <input type="" name="verify-user-phone"  class="box"/>
+                        <input type="" name="verify-user-phone"  class="box" required/>
                     </li>
                     <li>
                         <label for="user-message">Your Messgae</label>
@@ -35,39 +35,41 @@
                     </li>
                     <li>
                         <label for="verify-user-way">How did you find us?</label>
-                        <input type="" name="verify-user-way" class="box"/>
+                        <select name="verify-user-way" class="box">
+                            <option value="web-searching">Web searching</option>
+                            <option value="friends">Friends</option>
                     </li>
                 </ul>
             </section>
-            <section id="radio-verify">
+            <section id="section-contact">
                 <h2>How should we reply?</h2>
-                 <ul>
-                     <li>
+                <ul  id="radio-verify">
+                    <li>
                          <input type="radio" name="verify" id="" required/>
                          <label for="verify-user-contactway">Call me</label>
-                      </li>
+                    </li>
                     <li>
-                          <input type="radio" name="verify" id="" required/>
-                            <label for="verify-user-contactway">Send me an email</label>
-                        </li>
-                        <li>
-                            <input type="radio" name="verify" id="" required/>
-                            <label for="verify-user-contactway">Don't reply/label>
-                        </li>
-                    </ul>
-                </section>
-                <section id="accept-term">
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="" name="accept-terms" checked />
-                            <label for="">Accept Terms</label>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <button type="reset" id="button-clear">Clear</button>
-                    <button type="submit" id="button-submit">Submit</button>
-                </section>
+                        <input type="radio" name="verify" id="" required/>
+                        <label for="verify-user-contactway">Send me an email</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="verify" id="" required/>
+                        <label for="verify-user-contactway">Don't reply/label>
+                    </li>
+                </ul>
+            </section>
+            <section id="accept-term">
+                <ul>
+                    <li>
+                        <input type="checkbox" class="" name="accept-terms" checked />
+                        <label for="">Accept Terms</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <button type="reset" id="button-clear">Clear</button>
+                <button type="submit" id="button-submit">Submit</button>
+            </section>
         </form>
     </body>
 </html>
