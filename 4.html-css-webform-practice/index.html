@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Jinny Web Form</title>
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+        <form action="/" method="GET">
+            <section>
+                <h2>How can we help you ?</h2>
+                <ul>
+                    <li>
+                        <label for="verify-user-name">Your name</label>
+                        <input type="text" name="verify-user-name"  class="box" />
+                    </li>
+                    <li>
+                        <label for="verify-user-email">Your E-Mail Address</label>
+                        <input type="email" name="verify-user-email"  class="box"/>
+                    </li>
+                    <li>
+                        <label for="verify-user-phone">Your Phone Number</label>
+                        <input type="" name="verify-user-phone"  class="box"/>
+                    </li>
+                    <li>
+                        <label for="user-message">Your Messgae</label>
+                        <textarea id="user-message" required rows="7"></textarea>
+                    </li>
+                    <li>
+                        <label for="verify-user-way">How did you find us?</label>
+                        <input type="" name="verify-user-way" class="box"/>
+                    </li>
+                </ul>
+            </section>
+            <section id="radio-verify">
+                <h2>How should we reply?</h2>
+                 <ul>
+                     <li>
+                         <input type="radio" name="verify" id="" required/>
+                         <label for="verify-user-contactway">Call me</label>
+                      </li>
+                    <li>
+                          <input type="radio" name="verify" id="" required/>
+                            <label for="verify-user-contactway">Send me an email</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="verify" id="" required/>
+                            <label for="verify-user-contactway">Don't reply/label>
+                        </li>
+                    </ul>
+                </section>
+                <section id="accept-term">
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="" name="accept-terms" checked />
+                            <label for="">Accept Terms</label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <button type="reset" id="button-clear">Clear</button>
+                    <button type="submit" id="button-submit">Submit</button>
+                </section>
+        </form>
+    </body>
+</html>
