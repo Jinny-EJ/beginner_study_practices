@@ -1,8 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: rgb(221, 234, 238);
-  /* display: grid;
-  place-items: center; */
 }
 
 h1 {
@@ -27,13 +25,13 @@ ul {
 
 label {
   color: rgb(39, 39, 87);
-  display: block;
+  /* display: block; */
 }
 
 .box {
   font: inherit;
   width: 100%;
-  display: block;
+  /* display: block; */
   box-sizing: border-box;
   height: 2rem;
   margin: 0.3rem;
