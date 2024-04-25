@@ -9,9 +9,9 @@ let name = 'ellie';
 const char = 'c';
 const brendan = 'brendan';
 const greeting = 'hello' + brendan;
-console.log('value: ${greeting}, type: ${typeof greeting}');
-const helloBob = 'hi ${brendan}!'; //template literals (string)
-console.log('value: ${helloBob}, type: ${typeof helloBob}');
+console.log(`value: ${greeting}, type: ${typeof greeting}`);
+const helloBob = `hi ${brendan}!`; //template literals (string)
+console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
 console.log('value: '+ helloBob + 'type: '+ typeof helloBob);
 
 
@@ -36,3 +36,4 @@ console.undefined
 // symbol, create unique identifiers for objects
 const symbol1 = Symbol('id');
 const symbol2 = symbol('id');
+
