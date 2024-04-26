@@ -79,3 +79,16 @@ const ellie = {name: 'ellie', age: 20 };
 ellie.age = 21; // 엘리 오브젝트 내부에는 name age 라는 변수가 존재하기 때문에, 변수에 다른 값을 할당할 순 있음. 
 
 
+//함수 선언 
+// function 이름 (입력받아야할 인자){
+//  함수 
+// }
+function doSomething(){
+    console.log('hello');
+}
+//함수 호출 
+// 함수이름 ();
+doSomething();
+
+const result = add(1,2);
+console.log(result);
