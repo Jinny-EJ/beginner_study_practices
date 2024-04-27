@@ -1,0 +1,68 @@
+body {
+
+  background-color:rgb(241,234,255) ;
+  font-family:"Outfit", sans-serif ;
+}
+H1 {
+  font-size: 50px;
+  color: rgb(80, 48, 196);
+  font-weight: bold;
+  margin: 100px auto 50px auto;
+}
+header,footer {
+    text-align: center;
+}
+header img {
+  width:300px;
+  margin-bottom: 40px;
+}
+main {
+  background-color: rgb(113, 76, 208);
+  border-radius: 8px;
+  color: white;
+  padding: 32px;
+  margin: 32px auto;
+  width: 700px;
+  
+}
+ul{
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+li {
+    margin:10px 0;
+    padding-left: 10px;
+    border-left: 5px solid transparent;
+}
+.a {
+    color:rgb(246, 246, 140);
+    border-color:rgb(246, 222, 143);
+    
+}
+footer a {
+    background-color: rgb(241,203,78);
+    color:rgb(85, 85, 85);
+    border-radius: 10px;
+    padding:10px 15px;
+    text-decoration: none;
+}
+a {
+    background-color: rgb(246, 229, 174);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(18, 20, 56);
+    padding:1px 5px;
+}
+a:hover, a:active {
+    background-color: rgb(245, 199, 46);
+
+}
+#f {
+    font-size: small;
+    color: rgb(158, 158, 158);
+    margin-top: 30px;
+}
+.highlight {
+    font-weight: bold;
+}
