@@ -8,6 +8,8 @@ document.body.children[1].children[0].href = 'https://google.com'; //여기서�
 // alert();
 // window.alert();
 
+// let newAnchorElement - document.getElementById('external-link');
+// newAnchorElement.href = 'https://google.com';
 
 
 // const newObject = {
@@ -15,3 +17,22 @@ document.body.children[1].children[0].href = 'https://google.com'; //여기서�
 //};
 // 이렇게 새로운 객체 생성 후 속성을 만들고 어떤 값을 할당 할때는 : 을 사용하지만, 
 // 하지만 DOM 을 이용해서 . 을 이용해서 드릴링을 하게 될 때에는 = 을 사용. 
+
+
+
+
+// ADD AN ELEMENT
+// 1. Create the new element 
+
+let newAnchorElement = document.createElement('a');
+
+// 2. Get access to the parent element that should hold the new element 
+
+let firstParagraph = document.querySelector('p');
+
+// 3. Insert the new element into the parent element content
+
+firstParagraph.append(newAnchorElement);
+
+newAnchorElement.href = 'https://google.com';
+newAnchorElement.textContent = 'This leads to Google!'; 
