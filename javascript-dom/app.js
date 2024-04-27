@@ -1,3 +1,6 @@
+ console.log(window);
+
+
 document.body.children[1].children[0].href = 'https://google.com'; //여기서의 새 값은 문자열이 아니어야 함. 왜냐하면 이 링크가 문자열이기 때문. 
  // 이렇게 작성시 코드가 에러가 뜨는 이유는 자바스크립트 코드가 너무 일찍 실행되기 때문. 
 
