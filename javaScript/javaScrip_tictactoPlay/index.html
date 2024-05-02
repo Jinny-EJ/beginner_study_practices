@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css"/>
     <title>Tic Tac Toe</title>
-</head>
-<body>
-    <header>
-        <h1>Play Tic, Tac, Toe</h1>
-        <p>Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>Play Tic, Tac, Toe</h1>
+      <p>Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
     </header>
     <main>
-        <aside>
-            <h2>Choose your name</h2>
-            <form>
-                <div>
-                    <label for="playername">Player name</label>
-                    <input type="text" name="playername" id="playername"/>
-                </div>
-                <div>
-                    <button type="button">Cancel</button>
-                    <button type="submit">Confirm</button>
-                </div>
-            </form>
-        </aside>
-        <!-- aside 를 오버레이라고 설명하는데, 추가적인이해 필요할듯. 오버레이 랩핑으로 aside 이용, 그리고 오버레이 안에는 사용자가 무엇을 해야 하는지 설명해 줄 것임.  -->
-        <section id="game-configuration">
-            <ol> 
-                <li>
-                    <article>
-                        <h2>Player 1</h2>
-                        <h3>PLAYER NAME</h3>
-                        <p>X</p>
-                        <button>Edit</button>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h2>Player 2</h2>
-                        <h3>PLAYER NAME</h3>
-                        <p>O</p>
-                        <button>Edit</button>
-                    </article>
-                </li>
-            </ol>
+      <aside>
+        <h2>Choose your name</h2>
+        <form>
+          <div>
+            <label for="playername">Player name</label>
+            <input type="text" name="playername" id="playername" />
+          </div>
+          <div>
+            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="submit" class="btn">Confirm</button>
+          </div>
+        </form>
+      </aside>
+      <!-- aside 를 오버레이라고 설명하는데, 추가적인이해 필요할듯. 오버레이 랩핑으로 aside 이용, 그리고 오버레이 안에는 사용자가 무엇을 해야 하는지 설명해 줄 것임.  -->
+      <section id="game-configuration">
+        <ol>
+          <li>
+            <article>
+              <h2>Player 1</h2>
+              <h3>PLAYER NAME</h3>
+              <p>X</p>
+              <button class="btn btn-alt">Edit</button>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h2>Player 2</h2>
+              <h3>PLAYER NAME</h3>
+              <p>O</p>
+              <button class="btn btn-alt">Edit</button>
+            </article>
+          </li>
+        </ol>
         <!-- 두명의 플레이어가 있기 때문에, unorder list 보다는 order list 가 나음.  -->
         <!-- article 로 랩핑을 해줄건데, 이는 페이지의 독립된 내용의 부분을 확실하게 래핑할 수 있기 때문. -->
-            <button>Start New Game</button>
-        </section>
-        <section id="active-game">
-            <article>
-                <h3>You won! <span id="active-player-name">PLAYER NAME</span>!</h3>
-                <p>Click "Start New Game" above, to start a new game!</p>
-            </article>
-            <p>it's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
-            <!-- 매 게임마다 player name  의 이름이 바뀔 것이기 때문에, span 사용 -->
-            <ol>
-                <li></li>
-                <li></li>
-                <li></li>
+        <button class="btn">Start New Game</button>
+      </section>
+      <section id="active-game">
+        <article>
+          <h3>You won! <span id="active-player-name">PLAYER NAME</span>!</h3>
+          <p>Click "Start New Game" above, to start a new game!</p>
+        </article>
+        <p>it's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
+        <!-- 매 게임마다 player name  의 이름이 바뀔 것이기 때문에, span 사용 -->
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
 
-                <li></li>
-                <li></li>
-                <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
 
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-
-        </section>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
     </main>
-
-
-</body>
+  </body>
 </html>
