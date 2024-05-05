@@ -1,4 +1,5 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+  editedPlayer = +event.target.dataset.playerid;
   playerConfigOverlayElement.style.display = "block";
   backdropElement.style.display = "block";
 }
@@ -32,3 +33,6 @@ function savePlayerConfig(event) {
 // 그 동작을 멈춰주는 것임. 우리는 브라우저 기반의 게임을 만드는 것이기 때문. preventDefault()
 
 //FormData 는 청사진을 의미.
+
+const updatedPlayerDataElement = document.getElementById('player-'+ editedPlayer + '-data');
+updatedPlayerDataElement.children[1].textContent = enteredPlayername;
