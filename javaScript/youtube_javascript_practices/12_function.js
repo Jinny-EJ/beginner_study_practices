@@ -61,7 +61,7 @@ console.log(multiplyAll (3,4,5,6,7,8,9,10));
 
 console.log('----------');
 
-// function 에 이름을 정해주지 않거ㅗ, 바로 실행하는 법 immediately  invoked function. 
+// function 에 이름을 정해주지 않고, 바로 실행하는 법 immediately  invoked function. 
 
 (function (x,y) { 
     console.log(x*y);
