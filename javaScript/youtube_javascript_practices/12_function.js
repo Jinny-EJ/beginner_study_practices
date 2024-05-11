@@ -71,3 +71,7 @@ console.log(typeof multiply);
 console.log(multiply instanceof Object);
 
 // 여기서 instanceof 는 multiply 가 object 인가? 를 묻는 것.) 
+
+
+//--------------------------------------------------------
+
