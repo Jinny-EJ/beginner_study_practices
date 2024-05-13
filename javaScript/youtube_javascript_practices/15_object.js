@@ -152,3 +152,76 @@ console.log(billionaire10);
 
 delete billionaire10 ['year'];
 console.log(billionaire10);
+
+
+
+
+// 기존에 함수로 object 만들기
+
+// function IdolModel (name,year){
+//     this.name = name;
+//     this.year = year;
+
+//     this.dance = function() {
+//         return `${this.name} 이 춤을 춥니다.`;
+//     }
+// }
+
+// const yuJin = new IdolModel ('안유진', 2003);
+// console.log(yuJin);
+
+
+
+// new 없이도 만드는 법
+
+function IdolModel (name,year){
+    if (!new.target){
+        return new IdolModel(name,year);
+    }
+    this.name = name;
+    this.year = year;
+
+    this.dance = function (){
+        return `${this.name}이 춤을 춥니다.`;
+    }
+}
+
+const yuJin = new IdolModel ('안유진', 2003);
+console.log(yuJin);
+
+const yuJin2 = IdolModel ('안유진', 2003);
+console.log(yuJin2);
+
+
+
+// prototype 
+
+const testObj = {};
+console.log (testObj.__proto__);
+
+
+// __proto__ 은 모든 객체에 존재하는 property 이다. 
+// class 강의에서 배울때 상속에서 부모 클래스에 해당되는 값이다. 
+
+
+function IdolModel (name,year) {
+    this.name = name;
+    this.year = year;
+}
+
+console.log (IdolModel.prototype);
+
+console.dir(IdolModel.prototype,{
+    showHidden:true,
+});
+
+const yuJin4 = new IdolModel ('안유진', 2003);
+
+console.log(yuJin4.__proto__ );
+console.log(yuJin4.__proto__ === IdolModel.prototype);
+
+console.log(testObj.__proto__ === Object.prototype);
+
+
+
+
