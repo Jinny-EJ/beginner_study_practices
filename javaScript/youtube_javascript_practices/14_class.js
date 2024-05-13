@@ -125,3 +125,62 @@ class billionaire4 {
     }
 }
 
+class businessWomen extends billionaire4 {
+    income () {
+        return '자산이 자동으로 불어나고 있습니다.';
+    }
+}
+
+class businessMen extends billionaire4 {
+    invest () {
+        return '투자가 성공적으로 엑시트 되었습니다.';
+    }
+}
+
+const eunjin4 = new businessWomen ('신은진', 1995);
+console.log (eunjin4);
+
+const eunjinsHusband = new businessMen ('EunJin\'s Husband',1993);
+console.log (eunjinsHusband);
+
+console.log(eunjin4.income());
+console.log(eunjin4.year);
+
+
+console.log (eunjin4 instanceof billionaire4);
+
+
+// super and override 
+// super 키워드는 부모 클래스를 가져올때 사용. 
+
+class billionaire5 {
+    name;
+    year;
+
+    constructor(name,year) {
+        this.name = name;
+        this.year = year;
+    }
+
+    showTheSecret() {
+        return `Hi, this is ${this.name}. I'm billionaire after ${this.year}. and the Secret is that You already have everything.`
+    }
+}
+
+class businessWomen2 extends billionaire5{
+    industry; 
+
+    constructor (name,year,industry) {
+        super(name,year);
+        this.industry = industry;
+    };    
+    showTheSecret() {
+        return `Hi, this is ${this.name}. I'm billionaire after ${this.year} in the ${this.industry} industry. and the Secret is that You already have everything.`
+    };
+};
+
+const eunjin5 = new businessWomen2 ('신은진', 2025, 'IT');
+console.log(eunjin5);
+console.log(eunjin5.showTheSecret());
+
+
