@@ -224,4 +224,83 @@ console.log(testObj.__proto__ === Object.prototype);
 
 
 
+// Overriding 
+
+function billionaire1000 (name,asset){
+    this.name = name;
+    this.asset = asset;
+
+    this.introduce = function () {
+        return '안녕하세요. 저는 빌리어네어 입니다.';
+    };
+};
+
+billionaire1000.prototype.introduce = function() {
+    return '안녕하세요.';
+};
+
+const eunJin1000 = new billionaire1000 ('신은진', '1.000.000.000$');
+console.log (eunJin1000.introduce());
+
+
+
+// getPrototypeOf : 프로토타입 확인용 
+// setPrototypeOf : 프로토타입 변경용 
+
+
+// Scope 
+
+
+function levelOne () {
+    var numberOne = 40;
+    function levelTwo () {
+        var numberTwo = 99;
+        console.log ( `leveltwo numberTwo : ${numberTwo}`);
+        console.log ( `levelTwo numberOne : ${numberOne}`);
+    }
+
+    levelTwo () ;
+    console.log (`levelOne numberOne : ${numberOne}`);
+}
+
+levelOne();
+// console.log(numberOne);
+// console.log(numberTwo);
+
+
+// this
+
+function person (name,year){
+    this.name = name;
+    this.year = year;
+
+    this.sayHello = function(){
+        return `안녕하세요. 저는 ${this.name} 입니다.`;
+    }
+}
+
+const yuJin5 = new person ('안유진', 2003);
+console.log (yuJin5.sayHello());
+
+person.prototype.dance = function () {
+    function dance2 (){
+            return  `${this.name}이 춤을 춥니다.`;
+    }
+    return dance2 ();
+}
+console.log (yuJin5.dance());
+
+
+//
+
+
+const yuJin3 = {
+    name: '안유진',
+}
+
+function multiply ( x,y,z){
+    return `${this.name}/결과값 : ${ x * y * z}`;
+}
+
+console.log( multiply. call (yuJin3,3,4,5));
 
