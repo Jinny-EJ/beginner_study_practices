@@ -1,0 +1,32 @@
+#main_logo {
+    font-size:x-large;
+    font-weight: bold;
+    color: rgb(237, 157, 8);
+}
+
+#main_picture {
+
+    width: 100%;
+}
+
+.row {
+    justify-content: space-around;
+    margin-top: 90px;
+}
+
+.card-img-top {
+    margin-top: 30px;
+    object-fit: cover;
+    width:100%;
+    height: 55%;
+}
+
+.card-text {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.card {
+    margin: 20px;
+}
