@@ -1,8 +1,9 @@
 const http = require('http');
 // require 이라는 함수 호출시, 노드 JS 에서 제공하는 유틸리티 메서드와 속성으로 가득 찬 객체가 반환됨. 
 
+function handleRequest(request, response) {}
 
-const server = http.createServer();
+const server = http.createServer(handleRequest);
 //createServer 메서드 = 웹 서버를 생성하는 역할 
 // 내부적으로 필요한 이 모든 서버 기능이 포함된 객체를 반환할 것. 
 // 여기서 아이디어는 들어오는 요청을 처리하고 응답을 다시 보내는 방법을 알고 있는 서버를 먼저 생성.
