@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practices</title>
+</head>
+<body>
+    <input id="name" type="text">
+    <button onclick="getsound()"> API 요청 </button>
+    <script>
+        function getSound() {
+            fetch(`http://localhost:3000/${name}`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                document.getElementById('name').value = data
+            });
+        }
+    </script>
+    
+</body>
+</html>
