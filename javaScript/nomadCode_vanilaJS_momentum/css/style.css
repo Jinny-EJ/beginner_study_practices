@@ -1,25 +1,53 @@
-.hidden {
-    display: none;
+* {
+    margin:0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color:white;
+    font-family: sans-serif;
+    text-align: center;
 }
 
 .background_image {
-    width: 100%;
-    padding:0px;
-    margin: 0px;
-    overflow: hidden;
-    position:rel;
-    z-index: 1;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    z-index: -1;
+    /* display:flex;
+    position:fixed;
+    width:auto;
+    height:140vh; */
+    /* margin-top: -110px;  */
+    object-position: 50% 50%;
 }
 
 #weather {
-    position:absolute;
-    z-index:3;
-    color: aliceblue;
     text-align: right;
+    margin:20px;
+    font-size: 25px;
+}
+
+#clock {
+    font-size: 60px;
+    margin-top: 13%;
+    margin-bottom: 4%;
+}
+
+#login-form {
+
+}
+
+#greeting {
+
+}
+
+#todo-form {
+
+}
+
+#quote {
+
+}
+
+form {
+
 }
