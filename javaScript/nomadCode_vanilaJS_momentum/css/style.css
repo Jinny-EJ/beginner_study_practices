@@ -7,8 +7,7 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: block;
     color:white;
     font-family: sans-serif;
     text-align: center;
@@ -19,9 +18,8 @@ body {
     z-index: -1;
     display:flex;
     position:fixed;
-    width:auto;
-    height:1500px; 
-    margin-top: -110px; 
+    width: 100%;
+    margin-top: -700px; 
     object-position: 50% 50%;
 }
 
@@ -34,7 +32,7 @@ body {
 #clock {
     font-size: 150px;
     margin-top: 13%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #greeting {
@@ -47,6 +45,10 @@ form {
 
 }
 
+#login-form {
+    margin: 20px;
+}
+
 #greeting {
 
 }
@@ -56,7 +58,11 @@ form {
 }
 
 #quote {
-
+    position:absolute;
+    bottom:30px;
+    left: 25%;
+    right: 25%;
+    ;
 }
 
 form {
