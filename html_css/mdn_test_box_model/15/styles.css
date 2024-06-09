@@ -1,0 +1,29 @@
+html {
+  font-family: sans-serif;
+}
+
+/* Your CSS below here */
+
+body {
+    height: 100vh; /* Viewport height를 100%로 설정 */
+  margin: 0; /* 기본 margin 제거 */
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+div {
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  align-content: center;
+  background-color: rgb(255, 145, 0);
+  font-size: 18px;
+  font-weight: bolder;
+  color:rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgb(135, 65, 14) ;
+  border: 1px solid rgb(241, 117, 28);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgb(146, 91, 8), inset -2px -2px 2px #c27a40, inset 2px 2px 2px #f6b24c;
+}
+
