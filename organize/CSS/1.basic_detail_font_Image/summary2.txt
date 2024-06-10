@@ -1,0 +1,4 @@
+
+🩶 단위 
+   ▪️ fr :  The fr unit represents one fraction of the available space in the grid container to flexibly size grid rows and columns.
+        1fr 1fr 1fr 일 경우 제공되는 화면에 균등하게 3개의 요소 분배 . 2fr 1fr 1fr 일 경우 첫번째 요소가 다른 요소들보다는 2배가 크게 주어진 화면에 모두 표시. 

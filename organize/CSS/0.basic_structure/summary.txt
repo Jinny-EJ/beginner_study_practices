@@ -1,0 +1,149 @@
+🥅 목표 : 기본적으로 웹사이트 구성시 필요한 기능들 요약 정리 및 이해 마스터 !!! 
+
+
+
+
+💛 External link 
+<link href = " " rel = "stylesheet"/>
+
+💛 Variable 변수 : -
+    :root {
+        --primary-color: #8B008B;
+        /* 웹사이트의 주된 색상으로 짙은 보라색(#8B008B)을 --primary-color라는 변수 이름으로 저장한다. */
+    }
+    p {
+        color: var(--primary-color);
+        /* var(변수이름)를 이용해서 --primary-color 변수의 값이 필요한 곳에 삽입한다. */
+    }
+
+💛 Selecter
+    ▪️ ***** = 범용선택자 universal selector = 웹페이지의 모든 요소에 적용된다. 웹페이지를 구성하는 모든 요소에 한꺼번에 동일한 스타일을 부여할때 사용되는데, 개별 요소의 선택자에 주어진 스타일로 덮어씌워질 수 있기 때문에 영구적인 스타일 부여에는 사용될 수 없다.
+    ▪️ **:root**  = 문서의 최상위 요소에 적용. (문서가 html 이 아닌 경우 해당 문서 종류에 따라간다. (html 요소 선택자보다 상위 요소를 의미한다.)
+    ▪️ **html**  = html 문서의 root 요소
+    ▪️ **body** = 대부분의 전역 스타일링을 여기에 부여한다. (font-family, color, background-color
+
+    ▪️ p    {…} = 태그유형선택
+    ▪️ #id     {…} = 아이디 선택
+    ▪️ .class   {….} = 클래스 선택
+    ▪️ [src]     {….}  = 속성 선택 → ex) <img src=”…”> 이 선택됨.
+    ▪️ p, .class   {….} = 그룹화선택 → ex) p 와 class 모두 선택
+    ▪️ p.class    {….}  = 결합선택 → ex) <p class=”some-class”>…</p> 이 선택됨.
+    ▪️ a:hover    {….} = 의사 선택자 → ex) <a>….</a> 가 모두 선택.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧡 Block & Inline
+    ▪️ Block : 요소 옆에 어떤 요소도 허락 X. width, height 설정 가능. (div)
+    ▪️ Inline : 요소 옆에 다른 요소 위치 가능. width, height 설정 불가능. (span,link)
+🫶 Margin collapsing
+    ✔️ 이런 현상이 일어날때에는 큰 margin size 를 가진 부분이 승리하게 됨.
+    ✔️ 수직 여백에서만 이런 현상이 일어남. 수평 여백은 이런 문제가 없음.
+    ✔️ 오직 블록 요소에서만 일어남. -> 인라인 요소는 수직 여백 옵션을 줄 수 없기 때문. 추가적으로 inline-block 규칙이 적용된 요소에서도 Margin collapsing 현상은 일어나지 않음.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❤️‍🔥 Flex box : 1차원 레이아웃. 부모 요소에 ( display: flex;)
+    ✔️ Making all the children of a container take up an equal amount of the available width/height, regardless of how much width/height is available.
+    ✔️ Making all columns in a multiple-column layout adopt the same height even if they contain a different amount of content.
+
+    ▪️ flex-direction : 주축을 설정 
+        - row (default) : 가로방향 
+        - row-reverse : 가로 반대 방향
+        - column : 세로방향 
+        - column-reverse : 세로 반대 방향 
+    ▪️ justify-content : 주축을 따라 정렬 
+        - flex-start (default) : 시작점 정렬
+        - flex-end : 끝점 정렬
+        - center : 중앙 정렬
+        - space-between : 요소 사이에 동일한 간격
+        - space-around : 요소 주위에 동일한 간격 
+    ▪️ align-content : 교차축을 따라 정렬 (content 는 두줄 이상일때 사용, align-items 는 한줄일때도 사용 추가적인 부분은 정리 필요)
+        - stretch (default) : 컨테이너를 태우도록 늘어남. 
+        - flex-start : 시작점 정렬 
+        - flex-end : 끝점 정렬 
+        - center : 중앙 정렬
+        - baseline : 텍스트 기준선 정렬 
+    ▪️ flex-wrap : flex items 가 컨테이너를 벗어날 때 줄 바꿈을 설정
+        - no wrap (default) : 줄 바꿈 없음 
+        - wrap : 줄 바꿈 있음
+        - wrap-reverse : 줄 바꿈 반대방향 
+    ▪️ flex-flow : flex-direction과 flex-wrap을 묶은 것
+        - ex. flex-flow : column nowrap
+
+    ▿ 여러개의 요소중 하나의 요소 크기 조정 할때 이용 가능 ▿
+        ▪️ flex-grow : how much of the remaining space in the flex container should be assigned to the item 
+        ▪️ flex-shrink : If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+        ▪️ flex-basis : CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+        ▪️ flex : flex-grow 와 flex-basis 요소 를 지정 ex. flex: 2 200px;
+            ex. 
+            section {
+                display: flex;
+            }
+
+            article {
+                flex: 1 200px;
+            }
+            
+            article:nth-of-type(3) {
+                flex: 2 200px;
+            }
+
+            <!-- 기본 값들은 200px 지정. 따라서 총 넓이가 600px 이하일때는 동일한 넓이를 유지하게 됨. 하지만 이 크기가 늘어나기 시작했을때는 3번째 article 이 두배의 크기까지 늘어날 수 있게 됨.  -->
+            
+    ▿ Horizontal & Vertical alignment 수평 수직 ▿
+        ▪️ align-items : controls where the flex items sit on the cross axis. (default: stretch) / In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
+        ▪️ align-self : The align-self CSS property overrides a grid or flex item's align-items value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
+        ▪️ justify-content : controls where the flex items sit on the main axis. (default: flex-start) (space-around : it distributes all the items evenly along the main axis with a bit of space left at either end.
+                            , space-between: which is very similar to space-around except that it doesn't leave any space at either end.)
+
+    ▿ MORE ▿
+        ▪️ order : 순서 변경 ex.  order: 1;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+❤️‍🔥 Grid : 2차원 레이아웃. 
+    display : grid;
+    ▿ 명시적 그리드
+        ▪️ grid-template-columns : 1fr 1fr 1fr; = (3, 1fr);
+        ▪️ grid-template-rows :  
+        ▪️ grid-template-areas :
+        ▪️ gap : column-gap (for gaps between columns 수평갭), row-gap (for gaps between rows 수직갭), gap (as a shorthand for both 첫번째요소가 수직, 두번째 요소가 수평) -> grid 를 붙인 것들이 prefixed 된 것이기 때문에, 만약의 경우를 대비해 gap 과 grid-gap 을 같이 지정하는걸 추천 
+    ▿ 암시적 그리드 
+        ▪️ grid-auto-rows : 요소의 수직크기에 대한 조건 설정
+        ▪️ grid-auto-columns : 요소의 좌우크기에 대한 조건 설정 
+            ex. grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 한칸의 가로길이 200px  으로 넣을 수 있는 만큼 생성
+                grid-auto-rows: minmax(100px, auto); 한칸의 세로길이 100px 으로 넣을 수 잇는 만큼 생성. 
+    ▿ 위치지정
+        ▪️ 아래의 요소 와 코드의 의미는 aside 요소는 2행 1열칸에 위치한다는 의미. 
+         ex. aside {
+             grid-column : 1;
+             grid-row : 2;
+             }
+        ▪️ grid-template-areas : 각 요소 css 에 grid-area : 이름 ; 을 지정해준 뒤 부모요소 css 에 grid-template-areas 안에 행과 열 을 표현 "1행배열 " 2행배열" "3행배열";
+         ex.  .container {
+                display: grid;
+                grid-template-areas:
+                    "header header"
+                    "sidebar content"
+                    "footer footer";
+                grid-template-columns: 1fr 3fr;
+                gap: 20px;
+                }
+
+                header {
+                grid-area: header;
+                }
+
+                article {
+                grid-area: content;
+                }
+                ...
+    ▿ Nesting grids and subgrid
+        ✔️ subgrid 설정시에는 grid-template-rows 와 grid-template-columns 를 사용해야 한다. 
+        ✔️ grid-column 으로 해당 subgrid 의 column 위치 지정시 ex. grid-column : 1/4  은 1번 column 부터 3번 column 까지 이용함을 나타낸다. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧡 float
+
+
