@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 65,
+                height: 70,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +44,16 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 23,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/mountain.jpg',
+                ),
+                fit: BoxFit.cover,
+                height: 400,
+              )
             ],
           ),
         ),
