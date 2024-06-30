@@ -17,6 +17,7 @@
     <script src="scripts/config.js" defer></script>
     <script src="scripts/game.js" defer></script>
     <script src="scripts/app.js" defer></script>
+    <!-- 순서가 중요함. defer 속성이 있는 스크립트는 백그라운드에서 다운로드하게 됨. 따라서 지연 스크립트를 다운로드 하는 도중에도 HTML 파싱이 멈추지 않음. -->
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -30,7 +31,7 @@
       <aside class="modal" id="config-overlay">
         <h2>Choose your name</h2>
         <form>
-          <div class="form-control error">
+          <div class="form-control">
             <label for="playername">Player name</label>
             <input type="text" name="playername" id="playername"/>
           </div>

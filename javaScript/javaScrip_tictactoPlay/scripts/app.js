@@ -11,6 +11,9 @@ const cancelConfigBtnElement = document.getElementById("cancel-config-btn");
 
 editPlayer1BtnElement.addEventListener("click", openPlayerConfig);
 editPlayer2BtnElement.addEventListener("click", openPlayerConfig);
+// 여기서 중요한 점은 openPlayerConfig 와 같이 함수를 playerConfigOverlayElement.js 에 정의하고 여기서 사용하려고 할때 () 을 넣어줄 필요가 없다는 것! 
+
+
 
 cancelConfigBtnElement.addEventListener("click", closePlayerConfig);
 backdropElement.addEventListener('click', closePlayerConfig);
