@@ -4,12 +4,18 @@ function openPlayerConfig(event) {
   backdropElement.style.display = "block";
 }
 // 여기서 block 의 의미는 화면에 보여준다는 것.
+// event target 은 이벤트가 발생한 요소에 대한 액세스 권한을 제공하고, 
+//이 경우엔 클릭한 버튼에 대한 액세스 권한을 제공함. 
+// + 를 넣어준 이유는 String 값을 number 로 변환하기 위해서. 예를 들어 문자 1 에 + 를 붙이면 number 로 형식 변환이 되는 것과 같은 원리임. 
+// dataset 이라는 속성은 자바스크립트 코드에 상호작용하는 모든 HTML 요소에 존재함. 
+// dataset 은  object 로 모든 데이터 속성으로 채워질 것임.  (참고로 하나의 동일한 요소에 여러 data- 이 생길 수도 있음)
+
 
 function closePlayerConfig() {
   playerConfigOverlayElement.style.display = "none";
   backdropElement.style.display = "none";
-  // formElement.firstElementChild.classList.remove("error");
-  // errorsOutputElement.textContent = "";
+  formElement.firstElementChild.classList.remove('error');
+  errorsOutputElement.textContent = "";
 }
 
 function savePlayerConfig(event) {
@@ -38,7 +44,7 @@ function savePlayerConfig(event) {
 
   if (!enteredPlayername) {
     //enteredPlayername === '' 으로 확인해도 괜찮음.
-    event.target.firstElementchild.classList.add('error');
+    event.target.firstElementChild.classList.add('error');
     errorsOutputElement.textContent = "Please enter a valid name!";
     return;
   }
@@ -46,5 +52,5 @@ function savePlayerConfig(event) {
 
 //FormData 는 청사진을 의미.
 
-// const updatedPlayerDataElement = document.getElementById('player-'+ editedPlayer + '-data');
-// updatedPlayerDataElement.children[1].textContent = enteredPlayername;
+const updatedPlayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
+updatedPlayerDataElement.children[1].textContent = enteredPlayername;
