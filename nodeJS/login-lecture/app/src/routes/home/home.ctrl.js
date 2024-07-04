@@ -1,12 +1,6 @@
 "use strict";
 
-const users = {
-  id: ["woorimIT", "나개발", "김팀장"],
-  psword: ["1234", "1234", "123456"],
-};
-
-
-
+const UserStorage = require("../../models/UserStorage");
 
 const output = {
   hello: (req, res) => {
@@ -25,20 +19,23 @@ const process = {
     // app.use (bodyParser.json()); / app.use(bodyParser.urlencoded({ extended: true })); 미들웨어도 넣어줘야함. 똑같은 app.js 폴더
     const id = req.body.id,
       psword = req.body.psword;
+    // const userStorage = new UserStorage(); 를 사용하지 않고  바로 userStorage 에 접근하려면 UserStorage 파일에서 static 선언을 해줘야함. 
+    const users = UserStorage.getUsers("id","psword");
 
+
+
+    const response = {};
     if (users.id.includes(id)) {
       const idx = users.id.indexOf(id);
       if (users.psword[idx] === psword) {
-        return res.json({
-          success: true,
-        }); // json 형태로 프론트로 성공했다는 말을 보내줌.
-      }
+        response.success = true;
+        return res.json(response);
+      } // json 형태로 프론트로 성공했다는 말을 보내줌.
     }
 
-    return res.json({
-      success: false,
-      msg: "로그인에 실패하셨습니다.",
-    });
+    response.success = false;
+    response.msg = "로그인에 실패하셨습니다";
+    return res.json(response);
   },
 };
 
