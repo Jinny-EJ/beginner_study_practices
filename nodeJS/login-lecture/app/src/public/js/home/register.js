@@ -4,21 +4,27 @@
 
 
 const id = document.querySelector("#id"),
+  name = document.querySelector("#name"),
   psward = document.querySelector("#psword"),
-  loginBtn = document.querySelector("#button");
+  confirmPsward = document.querySelector("#confirm-psword"),
+  registerBtn = document.querySelector("#button");
 
 
-loginBtn.addEventListener("click", login);
+registerBtn.addEventListener("click", register);
 
-function login() {
+function register() {
+    if (!id.value) return alert("아이디를 입력해주세요.");
+    if (psword !== confirmPsward) {
+        return alert("비밀번호가 일치하지 않습니다.");
+    }
     const req = {
         id: id.value,
+        name: name.value,
         psword: psword.value,
     };
-    console.log(req);
 
     // 데이터를 JSON 형식으로 서버에 보내는 부분 
-    fetch ("/login", {
+    fetch ("/register", {
         method: "POST", // html API 에 있는 method 중에 POST 사용. 
         headers: { 
             "Content-Type": "application/json"
@@ -31,14 +37,14 @@ function login() {
     .then ((res) => res.json()) // then 이라는 것을 사용해서 서버에서 응답한 데이터를 받을 수 있음. 
     .then((res) => {
         if (res.success) { //만약 res 에서 success 가 true 라면 if 문 진행 
-            location.href = "/"; // 로그인 성공시 이동 페이지 정의 
+            location.href = "/login"; // 회원가입 성공시 이동 페이지 정의 
         } else {
             alert(res.msg); // 로그인 실패시 실패 알람 
         }
     })
-
+    
     // fetch 이후 코드 중 에러 발생시 
     .catch((err) => {
-        console.error(new Error("로그인 중 에러 발생"));
+        console.error(new Error("회원가입 중 에러 발생"));
     });
 };
