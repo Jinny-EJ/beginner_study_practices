@@ -16,9 +16,9 @@ const output = {
 };
 
 const process = {
-  login: (req, res) => {
+  login: async (req, res) => {
     const user = new User(req.body);
-    const response = user.login();
+    const response = await user.login();
     return res.json(response);
 
     //login.js 파일의 fetch 에서 데이터를 body 에 저장했기 때문에, body 안에 있는 req 를 보기 위해 이렇게 코드를 작성해 줘야함.
