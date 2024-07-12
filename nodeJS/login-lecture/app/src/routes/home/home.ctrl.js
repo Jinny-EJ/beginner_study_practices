@@ -26,9 +26,9 @@ const process = {
     // app.js 폴더의 모듈 라인에 const bodyParser = require("body-parser"); 추가 이후 설치
     // app.use (bodyParser.json()); / app.use(bodyParser.urlencoded({ extended: true })); 미들웨어도 넣어줘야함. 똑같은 app.js 폴더
   },
-  register: (req, res) => {
+  register: async (req, res) => {
     const user = new User(req.body);
-    const response = user.register();
+    const response = await user.register();
     return res.json(response);
   },
 };
