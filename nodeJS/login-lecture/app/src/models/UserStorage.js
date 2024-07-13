@@ -5,7 +5,6 @@ const fs = require("fs").promises;
 // readFile 자체에서 Promise 를 제공하고 있음. 이 기능을 가져와서 사용하려면 위 처럼 .promises 를 적어주면 됨.
 
 class UserStorage {
-  // static #users = ;
 
   static #getUserInfo() {
     const users = JSON.parse(data);
