@@ -44,4 +44,8 @@ if (process.env.NODE_ENV !== "production") {
   logger.add(opts.console);
 }
 
+logger.stram = {
+  write: (message) => logger.info(message),
+};
+
 module.exports = logger;

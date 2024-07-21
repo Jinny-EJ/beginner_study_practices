@@ -1,24 +1,35 @@
 "use strict";
 
+const logger = require("../../config/logger");
 const User = require("../../models/User");
-
 
 const output = {
   hello: (req, res) => {
+    logger.info(`GET / 200 홈 화면으로 이동"`);
     res.render("home/index");
   },
   login: (req, res) => {
+    logger.info(`GET /login 200 로그인 화면으로 이동"`);
     res.render("home/login");
   },
   register: (req, res) => {
+    logger.info(`GET /register 200 회원가입 화면으로 이동"`);
     res.render("home/register");
-  }
+  },
 };
 
 const process = {
   login: async (req, res) => {
     const user = new User(req.body);
     const response = await user.login();
+    if (response.err)
+      logger.error(
+        `POST /login 200 Response: "success: ${response.success}, msg: ${response.err}"`
+      );
+    else
+      logger.info(
+        `POST /login 200 Response: "success: ${response.success}, msg: ${response.msg}"`
+      );
     return res.json(response);
 
     //login.js 파일의 fetch 에서 데이터를 body 에 저장했기 때문에, body 안에 있는 req 를 보기 위해 이렇게 코드를 작성해 줘야함.
@@ -29,6 +40,14 @@ const process = {
   register: async (req, res) => {
     const user = new User(req.body);
     const response = await user.register();
+    if (response.err)
+      logger.error(
+        `POST /login 200 Response: "success: ${response.success}, msg: ${response.err}"`
+      );
+    else
+      logger.info(
+        `POST /register 200 Response: "success: ${response.success}, msg: ${response.msg}"`
+      );
     return res.json(response);
   },
 };
