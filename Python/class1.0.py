@@ -152,3 +152,18 @@ print("일 :" + jumin[4:6]) # 다시 쉽게 말하면 4번째 숫자 부터 5번
 print("생년월일 :" + jumin[:6]) # 처음부터 6 직전까지
 print("뒤 7자리 :" + jumin[7:]) # 7 부터 끝까지 
 print("뒤 7자리 (뒤에서부터)" + jumin[-7:]) # 맨 뒤에서 7번째부터 끝까지. 
+
+
+
+# 문자열 처리 함수 
+python = "Python is Amazing"
+print(python.lower()) #문자가 모두 소문자로 나옴 
+print(python.upper()) #문자가 모두 대문자로 나옴 
+print(python[0].isupper()) #0번째 숫자가 대문자인지 소문자인지 
+print(len(python)) #문자열이 몇글자인지 알려줌
+print(python.replace("Python","Java")) #문자열에서 특정 글자를 찾아내서 다른 글자로 바꿔줌. 
+
+index = python.index("n")
+print(index) #pyton 이라는 글자 안에서 n 이라는 글자가 어디에 나오는지 위치를 알려줌 즉, 여기서는 처번째 n 의 위치를 알려줌 
+index = python.index("n",index +1)
+print(index) #여기서는 두번째 n이 나오는 위치를 알려줌. 
